@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Chepchieng Chepkonga | IT &amp; Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio & CV of Noah Chepchieng Chepkonga — Information Technology Specialist specializing in Cloud & Network Security." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              50:  '#f5f7fa',
+              100: '#e9eef5',
+              200: '#cfd9e6',
+              600: '#334155',
+              700: '#1e293b',
+              800: '#131d31',
+              900: '#0b1120',
+              950: '#060a13',
+            },
+            gold: {
+              50:  '#fdfaf0',
+              100: '#faf1d6',
+              200: '#f3e0a6',
+              300: '#eacb6d',
+              400: '#e0b53f',
+              500: '#cfa01c',
+              600: '#b08114',
+              700: '#8c6313',
+              800: '#744f16',
+              900: '#624217',
+            },
+            royal: {
+              400: '#6d8bff',
+              500: '#3b5bfd',
+              600: '#2a41e0',
+              700: '#2233b4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            soft: '0 18px 40px -22px rgba(11, 17, 32, 0.35)',
+            gold: '0 10px 30px -12px rgba(207, 160, 28, 0.55)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { -webkit-tap-highlight-color: transparent; }
+
+    body {
+      background-color: #f6f7fb;
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(59, 91, 253, 0.07), transparent 42%),
+        radial-gradient(circle at 88% 4%, rgba(207, 160, 28, 0.09), transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(13, 148, 136, 0.06), transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Classic thin gold divider */
+    .gold-rule {
+      height: 3px;
+      width: 74px;
+      background: linear-gradient(90deg, #cfa01c, #eacb6d, #cfa01c);
+      border-radius: 999px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid rgba(11, 17, 32, 0.08);
+      box-shadow: 0 18px 40px -26px rgba(11, 17, 32, 0.35);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 55px -28px rgba(11, 17, 32, 0.45);
+      border-color: rgba(207, 160, 28, 0.45);
+    }
+
+    /* Decorative top accent per card */
+    .accent-top { position: relative; overflow: hidden; }
+    .accent-top::before {
+      content: '';
+      position: absolute; inset: 0 0 auto 0; height: 3px;
+      background: linear-gradient(90deg, var(--a1, #cfa01c), var(--a2, #eacb6d));
+    }
+
+    .hero-mesh {
+      background-color: #0b1120;
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(59, 91, 253, 0.40), transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(207, 160, 28, 0.32), transparent 45%),
+        radial-gradient(circle at 60% 95%, rgba(13, 148, 136, 0.28), transparent 50%);
+    }
+
+    .gold-text {
+      background: linear-gradient(92deg, #eacb6d 0%, #f7e6b0 45%, #cfa01c 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .card:hover { transform: none; }
+    }
+
+    /* ============================================================
+       PHOTO / AVATAR STYLES
+       ============================================================ */
+    .photo-ring {
+      position: relative;
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #0b1120;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* The actual image — always fills the circle */
+    .photo-ring img.avatar-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 2;
+      display: block;
+    }
+
+    /* Fallback graphic sits behind the image */
+    .photo-ring .avatar-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: linear-gradient(135deg, #0b1120 0%, #131d31 45%, #2233b4 100%);
+      z-index: 1;
+    }
+
+    /* When the image fails, hide it so the fallback shows */
+    .photo-ring img.avatar-img.is-missing { display: none; }
+
+    /* ============================================================
+       CV MODULE
+       ============================================================ */
+    #cvSheet {
+      background: #ffffff;
+      border: 1px solid rgba(11, 17, 32, 0.10);
+      box-shadow: 0 30px 70px -40px rgba(11, 17, 32, 0.55);
+    }
+
+    .cv-grid { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 1024px) {
+      .cv-grid { grid-template-columns: 310px 1fr; }
+    }
+
+    .cv-sidebar {
+      background-color: #0b1120;
+      background-image:
+        radial-gradient(circle at 20% 5%, rgba(59, 91, 253, 0.30), transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(207, 160, 28, 0.18), transparent 55%);
+      color: #cbd5e1;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv-h {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #0b1120;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+    .cv-h::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(207, 160, 28, 0.65), rgba(207, 160, 28, 0));
+    }
+
+    .cv-sh {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #eacb6d;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-meter {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+    .skill-meter > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #cfa01c, #f3e0a6);
+    }
+
+    .cv-block { break-inside: avoid; page-break-inside: avoid; }
+
+    /* ============================================================
+       PRINT STYLES — isolate the CV sheet
+       ============================================================ */
+    @media print {
+      @page { size: A4; margin: 10mm; }
+
+      html, body {
+        background: #ffffff !important;
+        background-image: none !important;
+        color: #0b1120 !important;
+      }
+
+      body > *:not(main) { display: none !important; }
+
+      main {
+        display: block !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      main > section { display: none !important; }
+      main > section#cv { display: block !important; margin: 0 !important; }
+
+      #cv > .cv-section-head { display: none !important; }
+
+      #cv, #cv * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
+
+      #cvSheet {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        font-size: 10pt;
+      }
+
+      .cv-grid { grid-template-columns: 270px 1fr !important; }
+
+      .cv-sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .no-print { display: none !important; }
+
+      a { text-decoration: none !important; color: inherit !important; }
+    }
+
+    /* Academic Screenshot Mode */
+    body.academic-mode header,
+    body.academic-mode footer,
+    body.academic-mode .no-print { display: none !important; }
+    body.academic-mode section { margin-bottom: 2rem !important; page-break-inside: avoid; }
+    body.academic-mode { background-image: none; background-color: #ffffff; }
+
+    ::selection { background: #cfa01c; color: #0b1120; }
+  </style>
+</head>
+
+<body class="bg-transparent text-ink-800 font-sans antialiased selection:bg-gold-500 selection:text-ink-900">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="sticky top-0 z-50 bg-ink-900/95 backdrop-blur-md text-white border-b border-gold-500/25 shadow-lg shadow-ink-900/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-18">
+
+        <!-- Logo / Name -->
+        <a href="#home" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-serif font-bold text-ink-900 text-lg shadow-gold group-hover:scale-105 transition-transform">
+            NC
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-serif font-semibold tracking-wide text-sm sm:text-base text-white">Noah Chepchieng</span>
+            <span class="text-[10px] text-gold-300 font-mono tracking-[0.18em]">IT &amp; SECURITY</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-0.5 text-[13px] font-medium">
+          <a href="#home"     class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+          <a href="#resume"   class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Resume</a>
+          <a href="#cv"       class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">CV</a>
+          <a href="#projects" class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Projects</a>
+          <a href="#labs"     class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Labs</a>
+          <a href="#contact"  class="nav-link px-2.5 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div class="hidden lg:flex items-center gap-2.5">
+          <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-400 hover:to-emerald-500 transition-all shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp</span>
+          </a>
+          <button onclick="toggleAcademicMode()" title="Optimised view for assignment screenshots"
+                  class="px-3 py-2 text-xs font-semibold rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-1.5">
+            <i data-lucide="camera" class="w-3.5 h-3.5 text-gold-300"></i>
+            <span class="hidden xl:inline">Submission Mode</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle menu"
+                class="lg:hidden p-2 rounded-md text-slate-200 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gold-400 transition">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-ink-900 border-t border-white/10 px-4 pt-3 pb-5 space-y-1.5 text-sm font-medium">
+      <a href="#home"     class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Home</a>
+      <a href="#resume"   class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Resume</a>
+      <a href="#cv"       class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Curriculum Vitae</a>
+      <a href="#projects" class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Projects</a>
+      <a href="#labs"     class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Lab Writeups</a>
+      <a href="#contact"  class="mobile-link block px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 hover:text-gold-300 transition">Contact</a>
+
+      <div class="pt-3 mt-2 border-t border-white/10 grid grid-cols-2 gap-2">
+        <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+        </a>
+        <a href="tel:+254759768770"
+           class="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-xs font-semibold bg-royal-600 text-white">
+          <i data-lucide="phone" class="w-4 h-4"></i> Call
+        </a>
+      </div>
+
+      <button onclick="toggleAcademicMode()"
+              class="w-full mt-2 text-left px-4 py-2.5 text-xs font-semibold text-gold-300 flex items-center gap-2 hover:bg-white/5 rounded-lg transition">
+        <i data-lucide="camera" class="w-4 h-4"></i>
+        <span>Academic Submission Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Academic Mode Banner -->
+  <div id="academicBanner" class="hidden bg-gradient-to-r from-gold-500 to-gold-400 text-ink-900 text-xs px-4 py-2.5 text-center font-mono font-semibold">
+    📸 ACADEMIC SUBMISSION VIEW ACTIVE — Non-essential UI hidden for clean screenshots.
+    <button onclick="toggleAcademicMode()" class="underline font-bold ml-2 hover:opacity-80">Exit View</button>
+  </div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 sm:space-y-24">
+
+    <!-- ============ HERO / HOME ============ -->
+    <section id="home" class="scroll-mt-24 reveal">
+      <div class="rounded-2xl overflow-hidden border border-ink-900/10 shadow-soft bg-white">
+
+        <!-- Hero band -->
+        <div class="hero-mesh relative px-6 sm:px-10 lg:px-12 py-10 sm:py-14 text-white">
+          <div class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/70 to-transparent"></div>
+
+          <div class="max-w-3xl relative">
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-[11px] font-mono tracking-wide bg-white/10 text-gold-200 border border-gold-400/40 backdrop-blur-sm mb-5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-2"></span>
+              Available for IT &amp; Security Projects
+            </span>
+
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+              Noah Chepchieng<br class="sm:hidden"> <span class="gold-text">Chepkonga</span>
+            </h1>
+
+            <div class="gold-rule mb-5"></div>
+
+            <p class="text-slate-200/90 font-medium text-base sm:text-lg lg:text-xl tracking-wide">
+              Information Technology Specialist
+              <span class="text-gold-300 font-serif"> &bull; </span>
+              Cloud &amp; Network Security Practitioner
+            </p>
+
+            <!-- Quick stats -->
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
+              <div class="rounded-lg bg-white/5 border border-white/10 px-3 py-3 backdrop-blur-sm">
+                <p class="font-serif text-xl font-bold text-gold-300">2+</p>
+                <p class="text-[10px] uppercase tracking-wider text-slate-300 font-mono mt-0.5">Lab Writeups</p>
+              </div>
+              <div class="rounded-lg bg-white/5 border border-white/10 px-3 py-3 backdrop-blur-sm">
+                <p class="font-serif text-xl font-bold text-emerald-300">3</p>
+                <p class="text-[10px] uppercase tracking-wider text-slate-300 font-mono mt-0.5">Projects</p>
+              </div>
+              <div class="rounded-lg bg-white/5 border border-white/10 px-3 py-3 backdrop-blur-sm">
+                <p class="font-serif text-xl font-bold text-sky-300">10+</p>
+                <p class="text-[10px] uppercase tracking-wider text-slate-300 font-mono mt-0.5">Tools</p>
+              </div>
+              <div class="rounded-lg bg-white/5 border border-white/10 px-3 py-3 backdrop-blur-sm">
+                <p class="font-serif text-xl font-bold text-violet-300">1</p>
+                <p class="text-[10px] uppercase tracking-wider text-slate-300 font-mono mt-0.5">Internship</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero body -->
+        <div class="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
+
+          <!-- PROFILE PHOTO BADGE  (HERO) -->
+          <div class="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-b from-slate-50 to-white border border-ink-900/10 accent-top" style="--a1:#3b5bfd; --a2:#cfa01c;">
+            <div class="photo-ring w-32 h-32 sm:w-36 sm:h-36 mb-4 border-4 border-white shadow-gold ring-1 ring-gold-300/60">
+              <div class="avatar-fallback">
+                <i data-lucide="shield-check" class="w-11 h-11 text-gold-300 mb-1"></i>
+                <span class="font-serif text-[11px] font-bold tracking-[0.15em] text-slate-200">NOAH C.C.</span>
+              </div>
+              <img src="noah.png" alt="Noah Chepchieng Chepkonga" class="avatar-img" loading="lazy" onerror="this.classList.add('is-missing');" />
+            </div>
+
+            <h3 class="font-serif font-bold text-ink-900 text-lg">Noah Chepchieng</h3>
+            <p class="text-xs text-slate-500 font-mono mt-1">Mount Kenya University</p>
+
+            <div class="mt-4 flex flex-wrap justify-center gap-2">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-royal-500/10 text-royal-700 border border-royal-500/20">
+                Network Engineering
+              </span>
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-gold-500/10 text-gold-700 border border-gold-500/25">
+                Cybersecurity
+              </span>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="lg:col-span-2 space-y-5">
+            <h2 class="text-xl font-serif font-semibold text-ink-900 flex items-center gap-2.5">
+              <span class="p-2 rounded-lg bg-royal-500/10 text-royal-600">
+                <i data-lucide="user-check" class="w-5 h-5"></i>
+              </span>
+              Professional Profile
+            </h2>
+
+            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+              I am an Information Technology student specializing in
+              <strong class="text-ink-900 font-semibold">Cloud and Network Security</strong>
+              with hands-on technical experience in system administration, IT support, and secure software development.
+            </p>
+
+            <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+              My expertise spans designing backend web architectures, configuring enterprise-level networks with dynamic
+              security protocols, and executing hands-on vulnerability assessments. With professional exposure at the
+              <strong class="text-ink-900 font-semibold">Judiciary of Kenya</strong>, I bring a reliable approach to
+              infrastructure support and technology solutions.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row flex-wrap gap-3">
+              <a href="#contact"
+                 class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold text-ink-900 bg-gradient-to-r from-gold-300 to-gold-500 hover:from-gold-200 hover:to-gold-400 transition-all shadow-gold">
+                Get In Touch
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </a>
+              <a href="#cv"
+                 class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold text-white bg-ink-800 hover:bg-ink-700 transition-colors border border-ink-700">
+                View Full CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section id="resume" class="scroll-mt-24 space-y-7 reveal">
+      <div class="border-b border-ink-900/10 pb-5">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight flex items-center gap-3">
+          <span class="p-2.5 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 text-ink-900 shadow-gold">
+            <i data-lucide="file-text" class="w-6 h-6"></i>
+          </span>
+          Resume Outline
+        </h2>
+        <div class="gold-rule mt-3"></div>
+        <p class="text-slate-500 text-sm mt-3">Academic background, technical experience, certifications, and core competencies</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Academic -->
+        <div class="card accent-top rounded-xl p-6 sm:p-7" style="--a1:#3b5bfd; --a2:#6d8bff;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="p-2.5 rounded-lg bg-royal-500/10 text-royal-600">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-ink-900">Academic Background</h3>
+          </div>
+
+          <div class="pl-4 border-l-2 border-royal-500/60">
+            <h4 class="font-bold text-ink-900 text-base">Diploma / Degree in Information Technology</h4>
+            <p class="text-sm font-semibold text-royal-600 mt-0.5">Mount Kenya University</p>
+            <p class="text-xs text-slate-500 font-mono mt-1.5">Specialization: Cloud &amp; Network Security</p>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Focused coursework on network architecture, cloud infrastructure, cryptography, ethical hacking
+              fundamentals, database systems, and object-oriented programming.
+            </p>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="card accent-top rounded-xl p-6 sm:p-7" style="--a1:#0d9488; --a2:#2dd4bf;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="p-2.5 rounded-lg bg-teal-500/10 text-teal-600">
+              <i data-lucide="briefcase" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-ink-900">Work Experience</h3>
+          </div>
+
+          <div class="pl-4 border-l-2 border-teal-500/60">
+            <h4 class="font-bold text-ink-900 text-base">ICT Technical Intern</h4>
+            <p class="text-sm font-semibold text-teal-700 mt-0.5">Judiciary of Kenya</p>
+            <p class="text-[11px] text-slate-500 font-mono">Milimani Law Courts / Nakuru Law Courts</p>
+            <ul class="text-xs text-slate-600 mt-3 space-y-1.5 list-disc list-inside leading-relaxed">
+              <li>Provided tier-1 and tier-2 IT support across courtrooms and administrative registries.</li>
+              <li>Diagnosed and resolved local network connectivity, domain credential, and hardware issues.</li>
+              <li>Managed printer setups, peripheral installation, and court management software troubleshooting.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="card accent-top rounded-xl p-6 sm:p-7 md:col-span-2" style="--a1:#cfa01c; --a2:#eacb6d;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="p-2.5 rounded-lg bg-gold-500/12 text-gold-700">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-ink-900">Technical Skills &amp; Security Tools</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-[0.12em] mb-3">Network &amp; Security Tools</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs font-mono bg-ink-900 text-gold-200 rounded-md border border-ink-800">Cisco Packet Tracer</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-ink-900 text-gold-200 rounded-md border border-ink-800">Wireshark</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-ink-900 text-gold-200 rounded-md border border-ink-800">Nmap</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-ink-900 text-gold-200 rounded-md border border-ink-800">Kali / Ubuntu</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-ink-900 text-gold-200 rounded-md border border-ink-800">IPsec / ISAKMP</span>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-[0.12em] mb-3">Programming &amp; Web Development</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 text-xs font-mono bg-royal-500/10 text-royal-700 rounded-md border border-royal-500/25">PHP</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-royal-500/10 text-royal-700 rounded-md border border-royal-500/25">MySQL</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-royal-500/10 text-royal-700 rounded-md border border-royal-500/25">Python (Flask)</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-royal-500/10 text-royal-700 rounded-md border border-royal-500/25">Java</span>
+                <span class="px-3 py-1.5 text-xs font-mono bg-royal-500/10 text-royal-700 rounded-md border border-royal-500/25">HTML5 / CSS3 / JS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Venture -->
+        <div class="card accent-top rounded-xl p-6 sm:p-7 md:col-span-2" style="--a1:#7c3aed; --a2:#a78bfa;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="p-2.5 rounded-lg bg-violet-500/10 text-violet-600">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-ink-900">Professional Venture</h3>
+          </div>
+
+          <div class="pl-4 border-l-2 border-violet-500/60">
+            <h4 class="font-bold text-ink-900 text-base">Technology Consultant &amp; Digital Lead</h4>
+            <p class="text-sm font-semibold text-violet-700 mt-0.5">Chep Cyber Services / Deon Devs</p>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Offering custom web development, digital media branding, graphic design, and hardware maintenance
+              services for individual clients, local initiatives, and small businesses.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ============ CV MODULE ============
+         ============================================================ -->
+    <section id="cv" class="scroll-mt-24 space-y-7 reveal">
+
+      <div class="cv-section-head border-b border-ink-900/10 pb-5 flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+        <div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight flex items-center gap-3">
+            <span class="p-2.5 rounded-xl bg-gradient-to-br from-ink-900 to-ink-700 text-gold-300 shadow-lg shadow-ink-900/30">
+              <i data-lucide="scroll-text" class="w-6 h-6"></i>
+            </span>
+            Curriculum Vitae
+          </h2>
+          <div class="gold-rule mt-3"></div>
+          <p class="text-slate-500 text-sm mt-3">Formal CV — print it or save it as a PDF directly from your browser</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 no-print">
+          <button onclick="printCV()"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-ink-900 bg-gradient-to-r from-gold-300 to-gold-500 hover:from-gold-200 hover:to-gold-400 transition-all shadow-gold">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            Print / Save as PDF
+          </button>
+          <a href="mailto:noahchepkonga1@gmail.com?subject=CV%20Request"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-ink-900 hover:bg-ink-800 transition-colors border border-ink-800">
+            <i data-lucide="mail" class="w-4 h-4 text-gold-300"></i>
+            Request CV
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= CV SHEET ================= -->
+      <div id="cvSheet" class="rounded-2xl overflow-hidden">
+        <div class="cv-grid">
+
+          <!-- ---------- SIDEBAR ---------- -->
+          <aside class="cv-sidebar p-6 sm:p-7 space-y-7">
+
+            <div class="text-center pb-6 border-b border-white/10">
+              <div class="photo-ring w-24 h-24 mx-auto mb-4 border-2 border-gold-400/60 shadow-lg">
+                <div class="avatar-fallback">
+                  <i data-lucide="shield-check" class="w-10 h-10 text-gold-300"></i>
+                </div>
+                <img src="noah.png" alt="Noah Chepchieng Chepkonga" class="avatar-img" loading="lazy" onerror="this.classList.add('is-missing');" />
+              </div>
+              <p class="text-[10px] font-mono tracking-[0.28em] text-gold-300">CURRICULUM VITAE</p>
+              <h3 class="font-serif text-lg font-bold text-white mt-1.5">Noah C. Chepkonga</h3>
+              <p class="text-[11px] text-slate-400 mt-1">IT &amp; Cybersecurity Specialist</p>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="cv-sh">
+                <i data-lucide="user-round" class="w-3.5 h-3.5"></i> Contact
+              </h4>
+              <ul class="space-y-3 text-[12px]">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0"></i>
+                  <a href="tel:+254759768770" class="text-slate-300 hover:text-white transition-colors font-mono">0759 768 770</a>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                  <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors font-mono">WhatsApp: 0759 768 770</a>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400 mt-0.5 shrink-0"></i>
+                  <a href="mailto:noahchepkonga1@gmail.com" class="text-slate-300 hover:text-white transition-colors font-mono break-all">noahchepkonga1@gmail.com</a>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5 text-gold-300 mt-0.5 shrink-0"></i>
+                  <a href="https://github.com/noahchep" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors font-mono break-all">github.com/noahchep</a>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="linkedin" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                  <a href="https://linkedin.com/in/noahchep" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors font-mono break-all">linkedin.com/in/noahchep</a>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                  <span class="text-slate-300 font-mono">Kenya</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Core skills with meters -->
+            <div>
+              <h4 class="cv-sh">
+                <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> Core Skills
+              </h4>
+              <div class="space-y-3.5">
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">Network Security</span>
+                    <span class="text-gold-400 font-mono">90%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:90%"></span></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">Routing &amp; Switching</span>
+                    <span class="text-gold-400 font-mono">85%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:85%"></span></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">Linux / Kali</span>
+                    <span class="text-gold-400 font-mono">80%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:80%"></span></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">Web Development</span>
+                    <span class="text-gold-400 font-mono">82%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:82%"></span></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">IT Support &amp; Systems</span>
+                    <span class="text-gold-400 font-mono">88%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:88%"></span></div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1.5">
+                    <span class="text-slate-300 font-medium">Graphic Design</span>
+                    <span class="text-gold-400 font-mono">75%</span>
+                  </div>
+                  <div class="skill-meter"><span style="width:75%"></span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Languages -->
+            <div>
+              <h4 class="cv-sh">
+                <i data-lucide="languages" class="w-3.5 h-3.5"></i> Languages
+              </h4>
+              <ul class="space-y-2 text-[12px]">
+                <li class="flex justify-between items-center">
+                  <span class="text-slate-300">English</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-gold-300 border border-white/10">Fluent</span>
+                </li>
+                <li class="flex justify-between items-center">
+                  <span class="text-slate-300">Kiswahili</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-gold-300 border border-white/10">Fluent</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Soft skills -->
+            <div>
+              <h4 class="cv-sh">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Soft Skills
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Problem Solving</span>
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Teamwork</span>
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Documentation</span>
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Adaptability</span>
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Client Service</span>
+                <span class="px-2 py-1 text-[10px] font-mono rounded bg-white/8 text-slate-300 border border-white/10">Continuous Learning</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- ---------- MAIN COLUMN ---------- -->
+          <div class="p-6 sm:p-9 space-y-8 bg-white">
+
+            <header class="cv-block">
+              <h1 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-ink-900 tracking-tight leading-tight">
+                Noah Chepchieng <span class="text-gold-600">Chepkonga</span>
+              </h1>
+              <div class="gold-rule my-3.5"></div>
+              <p class="text-sm sm:text-base font-semibold text-royal-700 tracking-wide">
+                Information Technology Specialist — Cloud &amp; Network Security
+              </p>
+            </header>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="user-check" class="w-4 h-4 text-gold-600"></i> Professional Summary
+              </h4>
+              <p class="text-[13px] text-slate-700 leading-relaxed">
+                Motivated Information Technology specialist with a strong foundation in
+                <strong class="text-ink-900">network engineering, cloud security, and backend web development</strong>.
+                Experienced in configuring enterprise network topologies, securing WAN links with IPsec/ISAKMP tunnels,
+                performing vulnerability reconnaissance, and delivering tier-1/tier-2 IT support in a high-pressure
+                government environment. Combines technical precision with a client-focused consulting mindset and a
+                proven record of delivering reliable, documented technology solutions.
+              </p>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-gold-600"></i> Education
+              </h4>
+              <div class="pl-4 border-l-2 border-royal-500/50">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <h5 class="font-bold text-ink-900 text-[13.5px]">Diploma / Degree in Information Technology</h5>
+                  <span class="text-[10.5px] font-mono text-slate-500 whitespace-nowrap">2023 — Present</span>
+                </div>
+                <p class="text-[12px] font-semibold text-royal-600 mt-0.5">Mount Kenya University</p>
+                <p class="text-[11px] text-slate-500 font-mono mt-0.5">Specialization: Cloud &amp; Network Security</p>
+                <p class="text-[12px] text-slate-600 mt-2 leading-relaxed">
+                  Coursework: Network Architecture, Cloud Infrastructure, Cryptography, Ethical Hacking Fundamentals,
+                  Database Systems, Object-Oriented Programming, Systems Administration.
+                </p>
+              </div>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="briefcase" class="w-4 h-4 text-gold-600"></i> Professional Experience
+              </h4>
+              <div class="space-y-5">
+                <div class="pl-4 border-l-2 border-teal-500/50">
+                  <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                    <h5 class="font-bold text-ink-900 text-[13.5px]">ICT Technical Intern</h5>
+                    <span class="text-[10.5px] font-mono text-slate-500 whitespace-nowrap">2024 — 2025</span>
+                  </div>
+                  <p class="text-[12px] font-semibold text-teal-700 mt-0.5">Judiciary of Kenya</p>
+                  <p class="text-[11px] text-slate-500 font-mono mt-0.5">Milimani Law Courts / Nakuru Law Courts</p>
+                  <ul class="text-[12px] text-slate-600 mt-2 space-y-1 list-disc list-outside ml-4 leading-relaxed">
+                    <li>Delivered tier-1 and tier-2 IT support across courtrooms, registries, and administrative offices.</li>
+                    <li>Diagnosed and resolved LAN connectivity faults, domain credential issues, and workstation hardware failures.</li>
+                    <li>Configured printers, scanners, and peripherals; maintained accurate asset and support records.</li>
+                    <li>Troubleshot court management software and assisted staff with secure system access procedures.</li>
+                  </ul>
+                </div>
+
+                <div class="pl-4 border-l-2 border-violet-500/50">
+                  <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                    <h5 class="font-bold text-ink-900 text-[13.5px]">Technology Consultant &amp; Digital Lead</h5>
+                    <span class="text-[10.5px] font-mono text-slate-500 whitespace-nowrap">Ongoing</span>
+                  </div>
+                  <p class="text-[12px] font-semibold text-violet-700 mt-0.5">Chep Cyber Services / Deon Devs</p>
+                  <ul class="text-[12px] text-slate-600 mt-2 space-y-1 list-disc list-outside ml-4 leading-relaxed">
+                    <li>Designed and delivered custom websites and backend systems for small businesses and community initiatives.</li>
+                    <li>Produced corporate branding, logos, event banners, and digital media assets for clients.</li>
+                    <li>Provided hardware maintenance, diagnostics, and end-user technology consulting.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="folder-git-2" class="w-4 h-4 text-gold-600"></i> Key Projects
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-3.5 rounded-lg border border-royal-500/20 bg-royal-500/5">
+                  <h5 class="font-bold text-ink-900 text-[12.5px]">OrientaCore Chatbot</h5>
+                  <p class="text-[10.5px] font-mono text-royal-700 mt-0.5">PHP · Flask · MySQL · JS</p>
+                  <p class="text-[11.5px] text-slate-600 mt-1.5 leading-relaxed">
+                    AI-driven student orientation assistant guiding course selection and portal registration.
+                  </p>
+                </div>
+                <div class="p-3.5 rounded-lg border border-teal-500/20 bg-teal-500/5">
+                  <h5 class="font-bold text-ink-900 text-[12.5px]">Secure Campus Architecture</h5>
+                  <p class="text-[10.5px] font-mono text-teal-700 mt-0.5">Packet Tracer · IPsec · VLAN</p>
+                  <p class="text-[11.5px] text-slate-600 mt-1.5 leading-relaxed">
+                    Multi-department network with inter-VLAN routing, ACLs, DHCP relay and encrypted WAN tunnels.
+                  </p>
+                </div>
+                <div class="p-3.5 rounded-lg border border-gold-500/25 bg-gold-500/5 sm:col-span-2">
+                  <h5 class="font-bold text-ink-900 text-[12.5px]">Chep Cyber Suite</h5>
+                  <p class="text-[10.5px] font-mono text-gold-700 mt-0.5">Photoshop · Illustrator · Vector Artwork</p>
+                  <p class="text-[11.5px] text-slate-600 mt-1.5 leading-relaxed">
+                    Branding portfolio covering corporate identity, event banners and social media graphics.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="cpu" class="w-4 h-4 text-gold-600"></i> Technical Proficiencies
+              </h4>
+              <div class="space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1.5 sm:gap-3 items-start">
+                  <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pt-0.5">Networking</p>
+                  <p class="text-[12px] text-slate-700 leading-relaxed">
+                    Cisco Packet Tracer, VLANs, Inter-VLAN Routing, ACLs, DHCP, NAT, Static &amp; Dynamic Routing,
+                    Port Security, IPsec/ISAKMP VPN, WAN Link Encryption
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1.5 sm:gap-3 items-start">
+                  <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pt-0.5">Security</p>
+                  <p class="text-[12px] text-slate-700 leading-relaxed">
+                    Wireshark Packet Analysis, Nmap Reconnaissance, Vulnerability Assessment, Kali Linux, Traffic
+                    Filtering, Security Hardening Basics
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1.5 sm:gap-3 items-start">
+                  <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pt-0.5">Development</p>
+                  <p class="text-[12px] text-slate-700 leading-relaxed">
+                    PHP, MySQL, Python (Flask), Java, HTML5, CSS3, JavaScript, REST API Integration, Responsive UI
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1.5 sm:gap-3 items-start">
+                  <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pt-0.5">Systems &amp; Support</p>
+                  <p class="text-[12px] text-slate-700 leading-relaxed">
+                    Windows 10/11, Windows Server Fundamentals, Ubuntu &amp; Kali Linux, Hardware Diagnostics,
+                    Printer &amp; Peripheral Setup, Helpdesk Ticketing
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1.5 sm:gap-3 items-start">
+                  <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider pt-0.5">Design &amp; Media</p>
+                  <p class="text-[12px] text-slate-700 leading-relaxed">
+                    Adobe Photoshop, Adobe Illustrator, Vector Artwork, Brand Identity, Social Media Graphics
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="badge-check" class="w-4 h-4 text-gold-600"></i> Certifications &amp; Training
+              </h4>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2.5 text-[12px] text-slate-700">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0"></i>
+                  <span><strong class="text-ink-900">Cisco Networking Academy</strong> — Introduction to Networks (ITN)</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-[12px] text-slate-700">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0"></i>
+                  <span><strong class="text-ink-900">Cisco Networking Academy</strong> — Switching, Routing &amp; Wireless Essentials</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-[12px] text-slate-700">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0"></i>
+                  <span><strong class="text-ink-900">Cisco Networking Academy</strong> — Enterprise Networking, Security &amp; Automation</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-[12px] text-slate-700">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-600 mt-0.5 shrink-0"></i>
+                  <span><strong class="text-ink-900">Google</strong> — Cybersecurity Professional Certificate (Foundations)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="cv-block">
+              <h4 class="cv-h">
+                <i data-lucide="users" class="w-4 h-4 text-gold-600"></i> Referees
+              </h4>
+              <p class="text-[12px] text-slate-600 italic">
+                Available upon request. Academic and professional referees can be provided on short notice.
+              </p>
+            </div>
+
+            <div class="pt-5 border-t border-ink-900/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[10.5px] font-mono text-slate-500">
+              <span>Noah Chepchieng Chepkonga — Curriculum Vitae</span>
+              <span class="text-gold-700">0759 768 770 · noahchepkonga1@gmail.com</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-[11px] text-slate-500 font-mono no-print">
+        Tip: click <span class="text-gold-700 font-semibold">Print / Save as PDF</span>, then choose “Save as PDF” as the destination to download this CV.
+      </p>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="scroll-mt-24 space-y-7 reveal">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 border-b border-ink-900/10 pb-5">
+        <div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight flex items-center gap-3">
+            <span class="p-2.5 rounded-xl bg-gradient-to-br from-royal-500 to-royal-700 text-white shadow-lg shadow-royal-500/30">
+              <i data-lucide="folder-git-2" class="w-6 h-6"></i>
+            </span>
+            Featured Projects
+          </h2>
+          <div class="gold-rule mt-3"></div>
+          <p class="text-slate-500 text-sm mt-3">Software development, network engineering, and digital media competencies</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 no-print">
+          <button onclick="filterProjects('all', event)"     class="proj-btn active px-4 py-2 text-xs font-semibold rounded-lg bg-ink-900 text-gold-300 border border-ink-800 transition-colors">All</button>
+          <button onclick="filterProjects('web', event)"     class="proj-btn px-4 py-2 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-ink-900/10 hover:bg-slate-50 transition-colors">Software</button>
+          <button onclick="filterProjects('network', event)" class="proj-btn px-4 py-2 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-ink-900/10 hover:bg-slate-50 transition-colors">Networking</button>
+          <button onclick="filterProjects('design', event)"  class="proj-btn px-4 py-2 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-ink-900/10 hover:bg-slate-50 transition-colors">Branding</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="projectsContainer">
+
+        <!-- Project 1 -->
+        <div class="project-card card rounded-xl overflow-hidden flex flex-col" data-cat="web">
+          <div class="px-5 py-4 bg-gradient-to-r from-royal-700 to-royal-500 flex justify-between items-center text-white">
+            <span class="text-[11px] font-mono tracking-wide text-white/90">Full-Stack AI Project</span>
+            <i data-lucide="bot" class="w-5 h-5 text-gold-200"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink-900 mb-1.5">1. OrientaCore Chatbot</h3>
+              <p class="text-xs text-royal-600 font-semibold mb-3">AI Student Support &amp; Course Assistant</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                An interactive conversational system built to guide incoming university students through academic
+                orientation, course unit selection, and portal registration steps.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-royal-500/10 text-royal-700 rounded border border-royal-500/20">PHP</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-royal-500/10 text-royal-700 rounded border border-royal-500/20">Python Flask API</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-royal-500/10 text-royal-700 rounded border border-royal-500/20">MySQL</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-royal-500/10 text-royal-700 rounded border border-royal-500/20">JavaScript</span>
+              </div>
+              <div class="pt-3 border-t border-ink-900/8 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <span>Academic &amp; Campus Tool</span>
+                <span class="text-emerald-600 font-semibold">v1.2 Completed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card card rounded-xl overflow-hidden flex flex-col" data-cat="network">
+          <div class="px-5 py-4 bg-gradient-to-r from-teal-700 to-teal-500 flex justify-between items-center text-white">
+            <span class="text-[11px] font-mono tracking-wide text-white/90">Network Infrastructure</span>
+            <i data-lucide="network" class="w-5 h-5 text-gold-200"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink-900 mb-1.5">2. Secure Campus Architecture</h3>
+              <p class="text-xs text-teal-700 font-semibold mb-3">VLAN &amp; ISAKMP Protected Network</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Designed and simulated a multi-department campus network featuring inter-VLAN routing, ACL firewall
+                rules, dynamic DHCP relay, and encrypted WAN link tunnels.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/10 text-teal-700 rounded border border-teal-500/20">Cisco Packet Tracer</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/10 text-teal-700 rounded border border-teal-500/20">ISAKMP IPsec</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/10 text-teal-700 rounded border border-teal-500/20">Port Security</span>
+              </div>
+              <div class="pt-3 border-t border-ink-900/8 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <span>Enterprise Design</span>
+                <span class="text-teal-700 font-semibold">Simulated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card card rounded-xl overflow-hidden flex flex-col md:col-span-2 xl:col-span-1" data-cat="design">
+          <div class="px-5 py-4 bg-gradient-to-r from-gold-600 to-gold-400 flex justify-between items-center text-ink-900">
+            <span class="text-[11px] font-mono tracking-wide font-semibold">Branding &amp; Media</span>
+            <i data-lucide="palette" class="w-5 h-5 text-ink-900"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink-900 mb-1.5">3. Chep Cyber Suite</h3>
+              <p class="text-xs text-gold-700 font-semibold mb-3">Graphic Design &amp; Digital Branding</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                A comprehensive portfolio of corporate logos, event banners, and social graphics created for community
+                initiatives and small business clients.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-gold-500/10 text-gold-700 rounded border border-gold-500/25">Adobe Photoshop</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-gold-500/10 text-gold-700 rounded border border-gold-500/25">Adobe Illustrator</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-gold-500/10 text-gold-700 rounded border border-gold-500/25">Vector Artwork</span>
+              </div>
+              <div class="pt-3 border-t border-ink-900/8 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <span>Production Media</span>
+                <span class="text-gold-700 font-semibold">Client Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ LABS ============ -->
+    <section id="labs" class="scroll-mt-24 space-y-7 reveal">
+      <div class="border-b border-ink-900/10 pb-5">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight flex items-center gap-3">
+          <span class="p-2.5 rounded-xl bg-ink-900 text-emerald-400 shadow-lg shadow-ink-900/25">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </span>
+          Lab Challenges &amp; Security Writeups
+        </h2>
+        <div class="gold-rule mt-3"></div>
+        <p class="text-slate-500 text-sm mt-3">Practical hands-on lab experiments, problem statements, and key findings</p>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Lab 1 -->
+        <div class="card rounded-xl overflow-hidden">
+          <div class="bg-ink-900 px-5 sm:px-6 py-4 border-b-2 border-gold-500 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-gold-500/20 text-gold-300 font-mono text-[11px] font-bold border border-gold-500/40">LAB #01</span>
+              <h3 class="font-serif font-bold text-base sm:text-lg text-white">Site-to-Site ISAKMP IPsec VPN Configuration</h3>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 whitespace-nowrap">Env: Cisco Packet Tracer</span>
+          </div>
+
+          <div class="p-6 space-y-5">
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-500"></i> Problem Statement
+              </h4>
+              <p class="text-sm text-slate-700 leading-relaxed bg-rose-50/60 border border-rose-100 p-4 rounded-lg">
+                Establish a secure, encrypted communications tunnel between two remote enterprise branches across an
+                untrusted simulated Internet WAN link, ensuring confidentiality and data integrity without compromising throughput.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="wrench" class="w-4 h-4 text-royal-600"></i> Approach &amp; Tools Used
+              </h4>
+              <p class="text-sm text-slate-700 leading-relaxed mb-3">
+                <strong class="text-ink-900">Tools:</strong> Cisco Packet Tracer, ISAKMP Security Association, AES-256
+                Encryption, SHA Hash algorithms, Pre-Shared Keys (PSK).
+              </p>
+              <ul class="text-xs text-slate-300 space-y-2 bg-ink-900 p-4 rounded-lg font-mono leading-relaxed">
+                <li class="flex gap-2"><span class="text-gold-400">›</span> Phase 1: Configured ISAKMP Crypto Policy (IKE Policy 10, DH Group 2, AES encryption).</li>
+                <li class="flex gap-2"><span class="text-gold-400">›</span> Phase 2: Created IPsec Transform-Set (esp-3des esp-sha-hmac) and ACL 101.</li>
+                <li class="flex gap-2"><span class="text-gold-400">›</span> Bound Crypto Map to outgoing WAN interfaces and verified tunnel via ping traffic.</li>
+              </ul>
+            </div>
+
+            <!-- SCREENSHOTS / EVIDENCE (Lab 1) -->
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="image" class="w-4 h-4 text-royal-600"></i> Screenshots / Evidence
+              </h4>
+              <!-- REPLACE the src below with your actual lab screenshot (e.g. images/lab1.png) -->
+              <div class="rounded-lg overflow-hidden border border-ink-900/10 bg-slate-50 relative">
+                <img src="images/lab1-screenshot.png" alt="Lab 1 Screenshot" class="w-full h-auto object-cover"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="hidden flex-col items-center justify-center p-8 text-center bg-slate-100">
+                  <i data-lucide="image-plus" class="w-8 h-8 text-slate-400 mb-2"></i>
+                  <p class="text-xs text-slate-500 font-mono">Add lab1-screenshot.png to images/</p>
+                  <p class="text-[10px] text-slate-400 mt-1">Upload your tunnel verification screenshot here</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Key Lessons Learned
+              </h4>
+              <p class="text-sm text-emerald-900 leading-relaxed bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
+                Identified that Phase 1 ISAKMP parameters (Diffie-Hellman group and authentication key) must strictly
+                match on both router endpoints; otherwise, renegotiation fails silently, dropping encrypted traffic flows.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab 2 -->
+        <div class="card rounded-xl overflow-hidden">
+          <div class="bg-ink-900 px-5 sm:px-6 py-4 border-b-2 border-emerald-500 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold border border-emerald-500/40">LAB #02</span>
+              <h3 class="font-serif font-bold text-base sm:text-lg text-white">Subnet Reconnaissance &amp; Traffic Packet Analysis</h3>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 whitespace-nowrap">Env: Kali Linux / Wireshark</span>
+          </div>
+
+          <div class="p-6 space-y-5">
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-500"></i> Problem Statement
+              </h4>
+              <p class="text-sm text-slate-700 leading-relaxed bg-rose-50/60 border border-rose-100 p-4 rounded-lg">
+                Perform passive and active network audits on a sandbox lab subnet to identify active hosts, open service
+                ports, OS fingerprints, and cleartext credentials traversing unencrypted channels.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="wrench" class="w-4 h-4 text-royal-600"></i> Approach &amp; Tools Used
+              </h4>
+              <p class="text-sm text-slate-700 leading-relaxed mb-3">
+                <strong class="text-ink-900">Tools:</strong> Nmap Security Scanner, Wireshark Packet Analyzer, Kali Linux Terminal.
+              </p>
+              <div class="bg-ink-950 text-slate-200 p-4 rounded-lg text-xs font-mono space-y-1.5 overflow-x-auto border border-ink-800">
+                <p class="text-emerald-400"># Active Reconnaissance Scan</p>
+                <p class="whitespace-nowrap">nmap -sS -sV -O -p 1-1024 192.168.1.0/24</p>
+                <p class="text-emerald-400 mt-3"># Captured Packet Filter in Wireshark</p>
+                <p class="whitespace-nowrap">http.request.method == "POST" || tcp.port == 21</p>
+              </div>
+            </div>
+
+            <!-- SCREENSHOTS / EVIDENCE (Lab 2) -->
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="image" class="w-4 h-4 text-royal-600"></i> Screenshots / Evidence
+              </h4>
+              <!-- REPLACE the src below with your actual lab screenshot (e.g. images/lab2.png) -->
+              <div class="rounded-lg overflow-hidden border border-ink-900/10 bg-slate-50 relative">
+                <img src="images/lab2-screenshot.png" alt="Lab 2 Screenshot" class="w-full h-auto object-cover"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="hidden flex-col items-center justify-center p-8 text-center bg-slate-100">
+                  <i data-lucide="image-plus" class="w-8 h-8 text-slate-400 mb-2"></i>
+                  <p class="text-xs text-slate-500 font-mono">Add lab2-screenshot.png to images/</p>
+                  <p class="text-[10px] text-slate-400 mt-1">Upload your Wireshark capture screenshot here</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-bold font-mono text-slate-500 uppercase tracking-[0.12em] mb-2 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Key Lessons Learned
+              </h4>
+              <p class="text-sm text-emerald-900 leading-relaxed bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
+                Demonstrated how legacy protocols such as HTTP and FTP transmit sensitive payloads in plain text.
+                Recommended enforcing TLS/HTTPS encryption and closing unused low-numbered service ports across internal hosts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="scroll-mt-24 space-y-7 reveal">
+      <div class="border-b border-ink-900/10 pb-5">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ink-900 tracking-tight flex items-center gap-3">
+          <span class="p-2.5 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-lg shadow-emerald-500/25">
+            <i data-lucide="send" class="w-6 h-6"></i>
+          </span>
+          Get In Touch
+        </h2>
+        <div class="gold-rule mt-3"></div>
+        <p class="text-slate-500 text-sm mt-3">Direct channels for academic inquiries, collaborations, and projects</p>
+      </div>
+
+      <!-- Quick contact tiles -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+           class="card accent-top rounded-xl p-5 flex items-center gap-4 group" style="--a1:#10b981; --a2:#34d399;">
+          <div class="p-3 rounded-xl bg-emerald-500/12 text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500">WhatsApp</p>
+            <p class="font-mono text-sm text-ink-900 truncate">0759 768 770</p>
+          </div>
+        </a>
+
+        <a href="tel:+254759768770"
+           class="card accent-top rounded-xl p-5 flex items-center gap-4 group" style="--a1:#3b5bfd; --a2:#6d8bff;">
+          <div class="p-3 rounded-xl bg-royal-500/12 text-royal-600 group-hover:bg-royal-600 group-hover:text-white transition-colors">
+            <i data-lucide="phone-call" class="w-6 h-6"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Call Directly</p>
+            <p class="font-mono text-sm text-ink-900 truncate">0759 768 770</p>
+          </div>
+        </a>
+
+        <a href="mailto:noahchepkonga1@gmail.com"
+           class="card accent-top rounded-xl p-5 flex items-center gap-4 group" style="--a1:#dc2626; --a2:#f87171;">
+          <div class="p-3 rounded-xl bg-red-500/12 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Email / Gmail</p>
+            <p class="font-mono text-xs text-ink-900 truncate">noahchepkonga1@gmail.com</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/noahchep" target="_blank" rel="noopener noreferrer"
+           class="card accent-top rounded-xl p-5 flex items-center gap-4 group" style="--a1:#0b1120; --a2:#cfa01c;">
+          <div class="p-3 rounded-xl bg-ink-900/8 text-ink-900 group-hover:bg-ink-900 group-hover:text-gold-300 transition-colors">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </div>
+          <div class="min-w-0">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500">GitHub</p>
+            <p class="font-mono text-xs text-ink-900 truncate">github.com/noahchep</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Contact info panel -->
+        <div class="rounded-xl p-6 sm:p-8 bg-ink-900 text-white relative overflow-hidden border border-ink-800">
+          <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gold-500/10 blur-2xl"></div>
+          <div class="relative">
+            <h3 class="font-serif text-xl font-bold mb-2">Direct Contact Info</h3>
+            <div class="gold-rule mb-5"></div>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              Reach out regarding cybersecurity research, backend web development projects, or technical inquiries.
+            </p>
+
+            <div class="space-y-3 text-sm">
+              <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-3 text-slate-300 hover:text-white p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+                <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+                <span class="font-mono text-xs sm:text-sm">WhatsApp: 0759768770</span>
+              </a>
+
+              <a href="tel:+254759768770"
+                 class="flex items-center gap-3 text-slate-300 hover:text-white p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-sky-400 shrink-0"></i>
+                <span class="font-mono text-xs sm:text-sm">Call: 0759768770</span>
+              </a>
+
+              <a href="mailto:noahchepkonga1@gmail.com"
+                 class="flex items-center gap-3 text-slate-300 hover:text-white p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+                <i data-lucide="mail" class="w-5 h-5 text-rose-400 shrink-0"></i>
+                <span class="font-mono text-xs sm:text-sm break-all">noahchepkonga1@gmail.com</span>
+              </a>
+
+              <a href="https://github.com/noahchep" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-3 text-slate-300 hover:text-white p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+                <i data-lucide="github" class="w-5 h-5 text-gold-300 shrink-0"></i>
+                <span class="font-mono text-xs sm:text-sm break-all">github.com/noahchep</span>
+              </a>
+
+              <!-- NEW: LinkedIn -->
+              <a href="https://linkedin.com/in/noahchep" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-3 text-slate-300 hover:text-white p-2.5 rounded-lg hover:bg-white/5 transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5 text-sky-400 shrink-0"></i>
+                <span class="font-mono text-xs sm:text-sm break-all">linkedin.com/in/noahchep</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-white/10 text-[11px] text-slate-400 font-mono relative">
+            <span class="inline-flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i> Kenya
+            </span>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="lg:col-span-2 card rounded-xl p-6 sm:p-8">
+          <h3 class="font-serif text-lg font-bold text-ink-900 mb-1">Send a Message</h3>
+          <p class="text-xs text-slate-500 mb-6">Fill out the form below to initiate contact directly.</p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cf-name" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5">Your Name</label>
+                <input id="cf-name" type="text" required placeholder="e.g. Dr. Jane Doe"
+                       class="w-full px-3.5 py-2.5 text-sm bg-slate-50/70 border border-ink-900/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-400 focus:bg-white transition">
+              </div>
+              <div>
+                <label for="cf-email" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5">Your Email</label>
+                <input id="cf-email" type="email" required placeholder="e.g. jane.doe@university.ac.ke"
+                       class="w-full px-3.5 py-2.5 text-sm bg-slate-50/70 border border-ink-900/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-400 focus:bg-white transition">
+              </div>
+            </div>
+
+            <div>
+              <label for="cf-subject" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5">Subject</label>
+              <input id="cf-subject" type="text" required placeholder="Project Collaboration / Academic Inquiry"
+                     class="w-full px-3.5 py-2.5 text-sm bg-slate-50/70 border border-ink-900/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-400 focus:bg-white transition">
+            </div>
+
+            <div>
+              <label for="cf-message" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1.5">Message</label>
+              <textarea id="cf-message" rows="5" required placeholder="Write your message here..."
+                        class="w-full px-3.5 py-2.5 text-sm bg-slate-50/70 border border-ink-900/12 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-400 focus:bg-white transition resize-y"></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="submit"
+                      class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-ink-900 font-bold text-sm rounded-lg transition-all shadow-gold">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Send Message
+              </button>
+              <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-lg transition-colors">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </form>
+
+          <!-- Success alert -->
+          <div id="formSuccessAlert" class="hidden mt-5 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+            <span>Thank you! Your message has been formatted and submitted successfully.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp"
+     class="no-print fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 text-white flex items-center justify-center shadow-xl shadow-emerald-600/35 hover:scale-110 active:scale-95 transition-transform">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink-900 text-slate-400 py-10 border-t border-gold-500/25 mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-5 text-xs text-center md:text-left">
+        <div class="flex flex-col sm:flex-row items-center gap-2">
+          <span class="font-serif font-bold text-gold-300 text-sm">Noah Chepchieng Chepkonga</span>
+          <span class="hidden sm:inline text-slate-600">&bull;</span>
+          <span>Academic Portfolio &copy; 2026</span>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://wa.me/254759768770" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">WhatsApp</a>
+          <span class="text-slate-700">&bull;</span>
+          <a href="tel:+254759768770" class="hover:text-sky-400 transition-colors">Call</a>
+          <span class="text-slate-700">&bull;</span>
+          <a href="https://github.com/noahchep" target="_blank" rel="noopener noreferrer" class="hover:text-gold-300 transition-colors">GitHub</a>
+          <span class="text-slate-700">&bull;</span>
+          <a href="https://linkedin.com/in/noahchep" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">LinkedIn</a>
+          <span class="text-slate-700">&bull;</span>
+          <a href="#home" class="hover:text-white transition-colors">Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Icons ---------- */
+    lucide.createIcons();
+
+    /* ---------- Mobile menu ---------- */
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      lucide.createIcons();
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    /* ---------- Project filtering ---------- */
+    function filterProjects(category, evt) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.proj-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-ink-900', 'text-gold-300', 'border-ink-800', 'active');
+        btn.classList.add('bg-white', 'text-slate-600', 'border-ink-900/10');
+      });
+
+      const target = evt && evt.currentTarget ? evt.currentTarget : null;
+      if (target) {
+        target.classList.remove('bg-white', 'text-slate-600', 'border-ink-900/10');
+        target.classList.add('bg-ink-900', 'text-gold-300', 'border-ink-800', 'active');
+      }
+
+      cards.forEach(card => {
+        const show = category === 'all' || card.getAttribute('data-cat') === category;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    }
+
+    /* ---------- Academic submission mode ---------- */
+    function toggleAcademicMode() {
+      document.body.classList.toggle('academic-mode');
+      document.getElementById('academicBanner').classList.toggle('hidden');
+      if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+    }
+
+    /* ---------- Print the CV only ---------- */
+    function printCV() {
+      const cv = document.getElementById('cv');
+      if (cv && !cv.classList.contains('visible')) cv.classList.add('visible');
+      if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+      setTimeout(() => window.print(), 120);
+    }
+
+    /* ---------- Contact form ---------- */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('formSuccessAlert');
+      const form = document.getElementById('contactForm');
+
+      alertBox.classList.remove('hidden');
+      form.reset();
+      lucide.createIcons();
+
+      setTimeout(() => alertBox.classList.add('hidden'), 5000);
+    }
+
+    /* ---------- Reveal on scroll ---------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ---------- Active nav highlight on scroll ---------- */
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + entry.target.id;
+            link.classList.toggle('text-gold-300', isActive);
+            link.classList.toggle('bg-white/5', isActive);
+            link.classList.toggle('text-slate-300', !isActive);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sections.forEach(sec => navObserver.observe(sec));
+  </script>
+</body>
+</html>
